@@ -1,0 +1,48 @@
+<%- include('layouts/header.ejs') %>
+<%- include('layouts/admin-nav.ejs') %>
+<div id="page_content">
+    <div id="page_content_inner">
+        <div class="md-card">
+            <% if (successMessage) { %>
+                <div class="alert alert-success">
+                  <%= successMessage %>
+                </div>
+              <% } else if (errorMessage) { %>
+                <div class="alert alert-danger">
+                  <%= errorMessage %>
+                </div>
+              <% } %>
+           
+            <div class="md-card-content" id="send-wishes-section">
+                <h3 class="heading_a">Send Birthdays Wishes</h3>
+                <form action="/send-wishes"  id="form" method="post" enctype="multipart/form-data" >
+                    <div class="row mt-5">
+                        <div class="col-md-4 mb-5">
+                          <div class="md-input-wrapper md-input-filled">
+                            <label>Select Template</label>
+                            <select id="template" name="template" class="md-input" data-uk-tooltip="{pos:'top'}" required>
+                            <option value="1">Template 1</option>
+                            <option value="2">Template 2</option>
+                            <option value="3">Template 3</option>
+                        </select></div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                          
+                          <div class="">
+                              <label>Select Excel File</label>
+                              <input type="file" class="md-input label-fixed mt-4" id="file" name="file" required/>
+                          </div>
+                      </div>
+                        <div class="col-md-12 ">
+                            <button type="submit" class="md-btn md-btn-primary md-btn-wave-light waves-effect waves-button waves-light" >Send Wishes</button>
+                        </div>
+                       
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+asd
+<%- include('layouts/footer.ejs') %>
